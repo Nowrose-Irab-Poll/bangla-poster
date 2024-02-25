@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  dir="ltr"
+  prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"
+>
+  <head>
+    <link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Bangla Poster</title>
+    <link rel="stylesheet" type="text/css" href="../imageMaker.min.css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+    <!-- <script src="../imageMaker.min.js"></script> -->
+    <script src="../imageMaker.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#bangla-poster-canvas").imageMaker({
+          merge_images: [
+            { url: "./assets/stickers/just_do_it.png", title: "Just Do it" },
+            { url: "./assets/stickers/starbucks.png", title: "Starbucks" },
+            { url: "./assets/stickers/kiss.png", title: "Kiss" },
+            { url: "./assets/stickers/donkey.png", title: "Donkey 1" },
+            { url: "./assets/stickers/donkey2.png", title: "Donkey 2" },
+          ],
+          templates: [
+            {
+              url: "./assets/templates/t-shirt-white.png",
+              title: "T-shirt White",
+            },
+            {
+              url: "./assets/templates/t-shirt-black.png",
+              title: "T-shirt black",
+            },
+            {
+              url: "./assets/templates/One-Does-Not-Simply.jpg",
+              title: "One Does Not Simply",
+            },
+            {
+              url: "./assets/templates/Roll-Safe-Think-About-It.png",
+              title: "Roll Safe Think About It",
+            },
+            {
+              url: "./assets/templates/The-Rock-Driving.png",
+              title: "The Rock Driving",
+            },
+            {
+              url: "./assets/templates/Third-World-Skeptical-Kid.png",
+              title: "Third World Skeptical Kid",
+            },
+            {
+              url: "./assets/templates/happy-birthday-greeting-card.jpg",
+              title:
+                "Happy birthday greeting card with blank place for your wishes and message",
+            },
+            {
+              url: "./assets/templates/blank-white-floral-card-template-illustration.jpg",
+              title: "blank white floral card template illustration",
+            },
+            {
+              url: "./assets/templates/happy-fathers-day-gift.jpg",
+              title: "Happy fathers day gift",
+            },
+            {
+              url: "./assets/templates/white-card-sweet-cakes-macaroons.jpg",
+              title: "White card sweet cakes macaroons",
+            },
+          ],
+          text_boxes_count: 1,
+        });
+
+        //The following code is for animate scrolling when open the page
+        jQuery([document.documentElement, document.body]).animate(
+          {
+            scrollTop: jQuery("#" + jQuery(":target").attr("id")).offset().top,
+          },
+          1000
+        );
+      });
+    </script>
+  </head>
+  <body>
+    <div id="bangla-poster-canvas"><h1>Clothes & T-Shirt maker</h1></div>
+  </body>
+</html>
