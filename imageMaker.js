@@ -86,6 +86,13 @@
     <div class="wrapper-memes-preview">
     <div class="wrapper-memes-preview-operations">
     
+        <button  class="trigger-element first fileUpload btn btn-sm btn-default" target_element_triggered=".amm-self-addImage" id="amm-merge-self-image-trigger">
+            <input type="file" class="upload amm-self-addImage"  name="addImage"> 
+            <span class="glyphicon glyphicon-picture"></span> 
+            <span class="text_value">` +
+        canvas_info.i18n.mergeSelfImageText +
+        `</span>
+            </button> 
            <button  class="trigger-element first fileUpload btn btn-sm btn-default" target_element_triggered=".amm-addImage" id="amm-merge-image-trigger">
              <input type="file" class="upload amm-addImage"  name="addImage"> 
                 <span class="glyphicon glyphicon-picture"></span> 
@@ -210,7 +217,8 @@
           bottomText: "Bottom Text",
           sizeText: "Size",
           uperCaseText: "UperCase",
-          mergeImageText: "Upload Your Image",
+          mergeImageText: "Upload Sticker",
+          mergeSelfImageText: "Upload Your Image",
           drawText: "Draw",
           addTextBoxText: "Add TextBox",
           previewText: "Preview",
@@ -811,6 +819,30 @@
         };
         reader.readAsDataURL(this.files[0]);
       }
+      async function amm_add_self_image(event) {
+        const file = this.files[0];
+
+        const formData = new FormData();
+        formData.append("image", file);
+
+        try {
+          const response = await fetch("http://localhost:3000/upload", {
+            method: "POST",
+            body: formData,
+          });
+
+          const blob = await response.blob(); // Get blob data from the response
+          const imageURL = URL.createObjectURL(blob); // Generate URL from blob
+
+          // If you want to display the uploaded image:
+          var image_info = new ImageInfo();
+          image_info.img = new Image();
+          image_info.img.src = imageURL;
+          amm_add_image_load(image_info);
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      }
 
       function amm_canvas_refresh() {}
 
@@ -943,6 +975,7 @@
       }
 
       container.find(".amm-addImage").change(amm_add_image);
+      container.find(".amm-self-addImage").change(amm_add_self_image);
       /**/
 
       /*Reset Meme event*/
@@ -1264,7 +1297,7 @@
               container.find(".wrapper-amm-stop-brushes").addClass("show");
               container
                 .find(
-                  "#amm-merge-image-trigger, #amm-brushes, .wrapper-memes-preview-operations .responsive-button"
+                  "#amm-merge-image-trigger, #amm-merge-self-image-trigger, #amm-brushes, .wrapper-memes-preview-operations .responsive-button"
                 )
                 .hide();
 
@@ -1280,7 +1313,7 @@
               container.find(".wrapper-amm-stop-brushes").removeClass("show");
               container
                 .find(
-                  "#amm-merge-image-trigger, #amm-brushes, .wrapper-memes-preview-operations .responsive-button"
+                  "#amm-merge-image-trigger, #amm-merge-self-image-trigger, #amm-brushes, .wrapper-memes-preview-operations .responsive-button"
                 )
                 .show();
               if (MemeGenerator.is_responsive()) {
