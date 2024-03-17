@@ -37,7 +37,7 @@
     }
 
     var initialElements = function (canvas_info) {
-      var buildImagesMemes = '<div class="view-images-memes-ar-amm">';
+      var buildImagesMemes = '<div class="view-images-memes-ar-amm d-none">';
       buildImagesMemes += '<div class="wrapper_hover_title_meme_amm"></div>';
       buildImagesMemes += '<div class="wrapper_thumbnail_meme">';
 
@@ -82,6 +82,21 @@
 
       return (
         `<div class="wrapper-memes-main">
+        <div class="wrapper-memes-operations">
+    ` +
+        buildImagesMergeMemes +
+        `
+    ` +
+        buildImagesMemes +
+        `
+     <div class="amm-text-boxes"></div>
+     <form action="/" method="post" class="advanced-options-operations-form" accept-charset="UTF-8"><div><input type="hidden" name="form_build_id" value="form-C56rQ956oZXaasEGaFTd4nA7cf4GnkPvYCU0HEoO-fg">
+     <input type="hidden" name="form_id" value="advanced_options_operations_form">
+     <button class="add_textbox btn btn-success form-submit edit-add-textbox"  name="op" value="add_textbox" type="button">` +
+        canvas_info.i18n.addTextBoxText +
+        `</button>
+     </div></form>
+    </div>
     
     <div class="wrapper-memes-preview">
     <div class="wrapper-memes-preview-operations">
@@ -152,23 +167,6 @@
         `</button>
     </form>
     
-    </div>
-   
-
-    <div class="wrapper-memes-operations">
-    ` +
-        buildImagesMergeMemes +
-        `
-    ` +
-        buildImagesMemes +
-        `
-     <div class="amm-text-boxes"></div>
-     <form action="/" method="post" class="advanced-options-operations-form" accept-charset="UTF-8"><div><input type="hidden" name="form_build_id" value="form-C56rQ956oZXaasEGaFTd4nA7cf4GnkPvYCU0HEoO-fg">
-     <input type="hidden" name="form_id" value="advanced_options_operations_form">
-     <button class="add_textbox btn btn-success form-submit edit-add-textbox"  name="op" value="add_textbox" type="button">` +
-        canvas_info.i18n.addTextBoxText +
-        `</button>
-     </div></form>
     </div>
 
     <div class="clear_both"> </div>

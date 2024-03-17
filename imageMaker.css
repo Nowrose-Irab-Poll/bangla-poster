@@ -315,6 +315,8 @@ input#amm-clear-brush {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
 }
 .stButton .stFb,
 .stButton .stTwbutton,
