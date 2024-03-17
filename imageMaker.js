@@ -83,25 +83,9 @@
       return (
         `<div class="wrapper-memes-main">
         <div class="wrapper-memes-operations">
-    ` +
-        buildImagesMergeMemes +
-        `
-    ` +
-        buildImagesMemes +
-        `
-     <div class="amm-text-boxes"></div>
-     <form action="/" method="post" class="advanced-options-operations-form" accept-charset="UTF-8"><div><input type="hidden" name="form_build_id" value="form-C56rQ956oZXaasEGaFTd4nA7cf4GnkPvYCU0HEoO-fg">
-     <input type="hidden" name="form_id" value="advanced_options_operations_form">
-     <button class="add_textbox btn btn-success form-submit edit-add-textbox"  name="op" value="add_textbox" type="button">` +
-        canvas_info.i18n.addTextBoxText +
-        `</button>
-     </div></form>
-    </div>
+        <div class="wrapper-memes-preview-operations">
     
-    <div class="wrapper-memes-preview">
-    <div class="wrapper-memes-preview-operations">
-    
-        <button  class="trigger-element first fileUpload btn btn-sm btn-default d-none" target_element_triggered=".amm-self-addImage" id="amm-merge-self-image-trigger">
+        <button  class="trigger-element first fileUpload btn btn-sm btn-default" target_element_triggered=".amm-self-addImage" id="amm-merge-self-image-trigger">
             <input type="file" class="upload amm-self-addImage"  name="addImage"> 
             <span class="glyphicon glyphicon-picture"></span> 
             <span class="text_value">` +
@@ -145,6 +129,22 @@
           
            <div class="clear_both"></div>
        </div>
+    ` +
+        buildImagesMergeMemes +
+        `
+    ` +
+        buildImagesMemes +
+        `
+     <div class="amm-text-boxes"></div>
+     <form action="/" method="post" class="advanced-options-operations-form d-none" accept-charset="UTF-8"><div><input type="hidden" name="form_build_id" value="form-C56rQ956oZXaasEGaFTd4nA7cf4GnkPvYCU0HEoO-fg">
+     <input type="hidden" name="form_id" value="advanced_options_operations_form">
+     <button class="add_textbox btn btn-success form-submit edit-add-textbox"  name="op" value="add_textbox" type="button">` +
+        canvas_info.i18n.addTextBoxText +
+        `</button>
+     </div></form>
+    </div>
+    
+    <div class="wrapper-memes-preview">
     
     <div id="wrapper_canvas_background">
     <div class="wrapper_canvas">
@@ -210,13 +210,13 @@
         alterFontFamilies: function (All_FontFamilies) {},
         i18n: {
           fontFamilyText: "Font Family",
-          enterTextText: "Enter Text",
-          topText: "Top Text",
-          bottomText: "Bottom Text",
+          enterTextText: "আপনার এলাকার নাম লিখুন",
+          topText: "আপনার নাম লিখুন",
+          bottomText: "আপনার পদবীর নাম লিখুন",
           sizeText: "Size",
           uperCaseText: "UperCase",
           mergeImageText: "Upload Sticker",
-          mergeSelfImageText: "Upload Your Image",
+          mergeSelfImageText: "আপনার ছবি আপলোড করুন",
           drawText: "Draw",
           addTextBoxText: "Add TextBox",
           previewText: "Preview",
