@@ -508,3 +508,8 @@ input#amm-clear-brush {
     left: 5% !important;
   }
 }
+
+/* Hard Coded */
+#amm-upload-image-meme-responsive {
+  display: none;
+}

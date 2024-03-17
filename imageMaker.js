@@ -101,7 +101,7 @@
     <div class="wrapper-memes-preview">
     <div class="wrapper-memes-preview-operations">
     
-        <button  class="trigger-element first fileUpload btn btn-sm btn-default" target_element_triggered=".amm-self-addImage" id="amm-merge-self-image-trigger">
+        <button  class="trigger-element first fileUpload btn btn-sm btn-default d-none" target_element_triggered=".amm-self-addImage" id="amm-merge-self-image-trigger">
             <input type="file" class="upload amm-self-addImage"  name="addImage"> 
             <span class="glyphicon glyphicon-picture"></span> 
             <span class="text_value">` +
@@ -115,13 +115,13 @@
         canvas_info.i18n.mergeImageText +
         `</span>
             </button> 
-             <button  class="trigger-element btn btn-sm btn-default" id="amm-brushes">
+             <button  class="trigger-element btn btn-sm btn-default d-none" id="amm-brushes">
                              <span class="glyphicon glyphicon-pencil"></span>             <span class="text_value">` +
         canvas_info.i18n.drawText +
         `</span>
             </button>      
          
-                  <button class="responsive-button hide-responsive-button last btn btn-sm btn-default" id="amm-preview-responsive">
+                  <button class="responsive-button hide-responsive-button last btn btn-sm btn-default d-none" id="amm-preview-responsive">
                              <span class="glyphicon glyphicon-eye-open"></span>             <span class="text_value">` +
         canvas_info.i18n.previewText +
         `</span>
