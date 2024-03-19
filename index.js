@@ -1,10 +1,3 @@
-
-  
-// document.getElementById("grid-banner").addEventListener('click', function(){
-
-//     console.log("clicked")
-// })
-
 document.addEventListener('DOMContentLoaded', function() {
     var rowItems = document.querySelectorAll('#grid-container-row #grid-banner .col');
   
