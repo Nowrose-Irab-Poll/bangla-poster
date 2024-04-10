@@ -37,7 +37,7 @@
     }
 
     var initialElements = function (canvas_info) {
-      var buildImagesMemes = '<div class="view-images-memes-ar-amm d-none">';
+      var buildImagesMemes = '<div class="view-images-memes-ar-amm">';
       buildImagesMemes += '<div class="wrapper_hover_title_meme_amm"></div>';
       buildImagesMemes += '<div class="wrapper_thumbnail_meme">';
 
